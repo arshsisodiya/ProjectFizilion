@@ -3,10 +3,10 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot help command """
+""" bot help command """
 
-from userbot import CMD_HELP, TIMEOUT
-from userbot.events import register
+from bot import CMD_HELP, TIMEOUT
+from bot.events import register
 from asyncio import sleep
 @register(outgoing=True, pattern=r"^\.help(?: |$)(.*)")
 async def help(event):

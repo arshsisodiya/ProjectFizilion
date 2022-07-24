@@ -7,7 +7,7 @@
 #
 #
 #Modified by @PrajjuS
-""" Userbot module for other small commands. """
+""" bot module for other small commands. """
 
 import io
 import sys
@@ -15,9 +15,9 @@ from os import execl
 from random import randint
 from time import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
-from userbot.events import register
-from userbot.utils import time_formatter
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from bot.events import register
+from bot.utils import time_formatter
 
 
 @register(outgoing=True, pattern="^.random")
@@ -37,7 +37,7 @@ async def randomise(items):
 
 @register(outgoing=True, pattern="^.sleep ([0-9]+)$")
 async def sleepybot(time):
-    """ For .sleep command, let the userbot snooze for a few second. """
+    """ For .sleep command, let the bot snooze for a few second. """
     counter = int(time.pattern_match.group(1))
     await time.edit("`Going For Sleep`")
     if BOTLOG:
@@ -114,7 +114,7 @@ async def repo_is_here(wannasee):
 async def repo_is_here(wannasee):
     """ For .deploy command, just returns the heroku deploying URL. """
     await wannasee.edit(
-        "[Click here](https://heroku.com/deploy?template=https://github.com/FrosT2k5/ProjectFizilion/tree/demon) to deploy Fizilion Userbot on Heroku."
+        "[Click here](https://heroku.com/deploy?template=https://github.com/FrosT2k5/ProjectFizilion/tree/demon) to deploy Fizilion bot on Heroku."
     )
 
 @register(outgoing=True, pattern="^.support$")
@@ -134,7 +134,7 @@ async def raw(rawtext):
         reply_to_id = rawtext.message.id
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
-        await rawtext.edit("`Check the userbot log for the decoded message data !!`")
+        await rawtext.edit("`Check the bot log for the decoded message data !!`")
         await rawtext.client.send_file(
             BOTLOG_CHATID,
             out_file,
@@ -150,15 +150,15 @@ CMD_HELP.update(
         "misc": ".random <item1> <item2> ... <itemN>"
 "\nUsage: Get a random item from the list of items.\n\n"
 ".sleep <seconds>"
-"\nUsage: hibernate your userbot.\n\n"
+"\nUsage: hibernate your bot.\n\n"
 ".shutdown"
 "\nUsage: Shutdowns Your Bot.\n\n"
 ".repo"
-"\nUsage: If you are curious what makes the userbot work, this is what you need.\n\n"
+"\nUsage: If you are curious what makes the bot work, this is what you need.\n\n"
 ".readme"
-"\nUsage: Provide links to setup the userbot and it's modules\nAnd .support for support group\n\n"
+"\nUsage: Provide links to setup the bot and it's modules\nAnd .support for support group\n\n"
 ".guide"
-"\nUsage: Provides Full guide to setup Fizilion Userbot.\n\n"
+"\nUsage: Provides Full guide to setup Fizilion bot.\n\n"
 ".repeat <no.> <text>"
 "\nUsage: Repeats the text for a number of times. Don't confuse this with spam tho.\n\n"
 ".restart"
@@ -166,6 +166,6 @@ CMD_HELP.update(
 ".raw"
 "\nUsage: Get detailed JSON-like formatted data about replied message."
 ".deploy"
-"\nUsage: Get link to deploy Fizilion Userbot on Heroku."
+"\nUsage: Get link to deploy Fizilion bot on Heroku."
      }
 )

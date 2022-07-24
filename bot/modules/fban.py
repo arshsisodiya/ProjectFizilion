@@ -6,15 +6,15 @@
 
 from sqlalchemy.exc import IntegrityError
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from bot import CMD_HELP, bot
+from bot.events import register
 
 
 @register(outgoing=True, disable_edited=True, pattern=r"^\.fban(?: |$)(.*)")
 async def fban(event):
     """Bans a user from connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import get_flist
+        from bot.modules.sql_helper.fban_sql import get_flist
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -82,7 +82,7 @@ async def fban(event):
 async def unfban(event):
     """Unbans a user from connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import get_flist
+        from bot.modules.sql_helper.fban_sql import get_flist
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -148,7 +148,7 @@ async def unfban(event):
 async def addf(event):
     """Adds current chat to connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import add_flist
+        from bot.modules.sql_helper.fban_sql import add_flist
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -169,7 +169,7 @@ async def addf(event):
 async def delf(event):
     """Removes current chat from connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import del_flist
+        from bot.modules.sql_helper.fban_sql import del_flist
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -181,7 +181,7 @@ async def delf(event):
 async def listf(event):
     """List all connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import get_flist
+        from bot.modules.sql_helper.fban_sql import get_flist
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -200,7 +200,7 @@ async def listf(event):
 async def delf(event):
     """Removes all chats from connected federations."""
     try:
-        from userbot.modules.sql_helper.fban_sql import del_flist_all
+        from bot.modules.sql_helper.fban_sql import del_flist_all
     except IntegrityError:
         return await event.edit("**Running on Non-SQL mode!**")
 

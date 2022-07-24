@@ -11,14 +11,14 @@ from typing import Optional, Tuple
 
 from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY, SUDO_USERS
-from userbot.events import register
+from bot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY, SUDO_USERS
+from bot.events import register
 from colour import Color as asciiColor
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot.utils import edit_or_reply, edit_delete, media_to_pic, runcmd
+from bot.utils import edit_or_reply, edit_delete, media_to_pic, runcmd
 
 ##############################  FUNCTIONS  #####################################
 def random_color():

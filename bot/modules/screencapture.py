@@ -10,9 +10,9 @@ import io
 from asyncio import sleep
 from re import match
 
-from userbot import CMD_HELP
-from userbot.events import register
-from userbot.utils import chrome, options
+from bot import CMD_HELP
+from bot.events import register
+from bot.utils import chrome, options
 
 
 @register(pattern="^.ss (.*)", outgoing=True)

@@ -1,11 +1,11 @@
-#ported by arshsisodiya from catuserbot
+#ported by arshsisodiya from catbot
 
 import asyncio
 from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 @register(outgoing=True, pattern=r"^\.r(eco|ecognize)(?: |$)(.*)")
 async def _(event):

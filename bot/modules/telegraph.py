@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Port From UniBorg to UserBot by @afdulfauzan
+# Port From UniBorg to bot by @afdulfauzan
 
 import os
 from datetime import datetime
@@ -11,8 +11,8 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from bot.events import register
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")

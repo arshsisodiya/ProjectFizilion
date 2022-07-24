@@ -27,8 +27,8 @@ from telethon.tl.types import (
 )
 from telethon.utils import is_image, is_video
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 jikan = Jikan()
 

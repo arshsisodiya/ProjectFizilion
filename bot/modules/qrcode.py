@@ -5,7 +5,7 @@
 #
 # The entire source code is OSSRPL except 'makeqr and getqr' which is MPL
 # License: MPL and OSSRPL
-""" Userbot module containing commands related to QR Codes. """
+""" bot module containing commands related to QR Codes. """
 
 import asyncio
 import os
@@ -15,8 +15,8 @@ import qrcode
 from barcode.writer import ImageWriter
 from bs4 import BeautifulSoup
 
-from userbot import CMD_HELP, LOGS
-from userbot.events import register
+from bot import CMD_HELP, LOGS
+from bot.events import register
 
 
 @register(pattern=r"^.decode$", outgoing=True)

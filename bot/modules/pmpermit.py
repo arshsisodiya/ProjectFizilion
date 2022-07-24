@@ -3,14 +3,14 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for keeping control who PM you. """
+""" bot module for keeping control who PM you. """
 
 from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
-from userbot import (
+from bot import (
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -19,7 +19,7 @@ from userbot import (
     LOGS,
     PM_AUTO_BAN,
 )
-from userbot.events import register
+from bot.events import register
 
 # ========================= CONSTANTS ============================
 DEF_UNAPPROVED_MSG = (
@@ -45,8 +45,8 @@ async def permitpm(event):
         and not (await event.get_sender()).bot
     ):
         try:
-            from userbot.modules.sql_helper.globals import gvarstatus
-            from userbot.modules.sql_helper.pm_permit_sql import is_approved
+            from bot.modules.sql_helper.globals import gvarstatus
+            from bot.modules.sql_helper.pm_permit_sql import is_approved
         except AttributeError:
             return
         apprv = is_approved(event.chat_id)
@@ -132,8 +132,8 @@ async def auto_accept(event):
         and not (await event.get_sender()).bot
     ):
         try:
-            from userbot.modules.sql_helper.globals import gvarstatus
-            from userbot.modules.sql_helper.pm_permit_sql import approve, is_approved
+            from bot.modules.sql_helper.globals import gvarstatus
+            from bot.modules.sql_helper.pm_permit_sql import approve, is_approved
         except AttributeError:
             return
 
@@ -175,7 +175,7 @@ async def auto_accept(event):
 async def notifoff(noff_event):
     """ For .notifoff command, stop getting notifications from unapproved PMs. """
     try:
-        from userbot.modules.sql_helper.globals import addgvar
+        from bot.modules.sql_helper.globals import addgvar
     except AttributeError:
         await noff_event.edit("`Running on Non-SQL mode!`")
         return
@@ -187,7 +187,7 @@ async def notifoff(noff_event):
 async def notifon(non_event):
     """ For .notifoff command, get notifications from unapproved PMs. """
     try:
-        from userbot.modules.sql_helper.globals import delgvar
+        from bot.modules.sql_helper.globals import delgvar
     except AttributeError:
         await non_event.edit("`Running on Non-SQL mode!`")
         return
@@ -198,8 +198,8 @@ async def notifon(non_event):
 async def approvepm(apprvpm):
     """ For .approve command, give someone the permissions to PM you. """
     try:
-        from userbot.modules.sql_helper.globals import gvarstatus
-        from userbot.modules.sql_helper.pm_permit_sql import approve
+        from bot.modules.sql_helper.globals import gvarstatus
+        from bot.modules.sql_helper.pm_permit_sql import approve
     except AttributeError:
         await apprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -245,7 +245,7 @@ async def approvepm(apprvpm):
 @register(outgoing=True, pattern=r"^.(disapprove|da)$")
 async def disapprovepm(disapprvpm):
     try:
-        from userbot.modules.sql_helper.pm_permit_sql import dissprove
+        from bot.modules.sql_helper.pm_permit_sql import dissprove
     except BaseException:
         await disapprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -292,7 +292,7 @@ async def blockpm(block):
         uid = block.chat_id
 
     try:
-        from userbot.modules.sql_helper.pm_permit_sql import dissprove
+        from bot.modules.sql_helper.pm_permit_sql import dissprove
 
         dissprove(uid)
     except AttributeError:
@@ -328,7 +328,7 @@ async def add_pmsg(cust_msg):
     if not PM_AUTO_BAN:
         return await cust_msg.edit("You need to set `PM_AUTO_BAN` to `True`")
     try:
-        import userbot.modules.sql_helper.globals as sql
+        import bot.modules.sql_helper.globals as sql
     except AttributeError:
         await cust_msg.edit("`Running on Non-SQL mode!`")
         return

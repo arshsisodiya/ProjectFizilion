@@ -1,10 +1,10 @@
 ##ported from userge by @PrajjuS
-from userbot.events import register
-from userbot import CMD_HELP
+from bot.events import register
+from bot import CMD_HELP
 import time
 from asyncio import sleep 
 from telethon import events , client , TelegramClient
-from userbot.modules.admin import get_user_from_event
+from bot.modules.admin import get_user_from_event
 
 @register(outgoing=True, pattern="^.hack$")
 async def hack_func(event):

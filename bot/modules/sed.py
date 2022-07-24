@@ -5,13 +5,13 @@
 #
 # The entire source code is OSSRPL except 'sed' which is GPLv3
 # License: GPLv3 and OSSRPL
-""" Userbot command for sed. """
+""" bot command for sed. """
 
 import re
 from sre_constants import error as sre_err
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 DELIMITERS = ("/", ":", "|", "_")
 

@@ -60,17 +60,17 @@ For further guide you can read this [Guide](https://frost2k5.games/ProjectFizili
 Thanks: 
 * [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 * [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
-* [kandnub](https://github.com/kandnub) - TG-UserBot
+* [kandnub](https://github.com/kandnub) - TG-bot
 * [AdekMaulana](https://github.com/adekmaulana) - ProjectBish
 * [Mr.Miss](https://github.com/keselekpermen69) - Userbutt
 * [GengKapak](https://github.com/GengKapak) - DCLXVI
-* [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - OpenUserBot
+* [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - Openbot
 * [MoveAngel](https://github.com/MoveAngel) - One4U
 
 and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/FrosT2k5/ProjectFizilion/graphs/contributors).
 
 ## License
 
-This userbot licensed on [Raphielscape Public License](https://github.com/PrajjuS/ProjectFizilion/blob/demon/LICENSE) - Version 1.d, February 2020
+This bot licensed on [Raphielscape Public License](https://github.com/PrajjuS/ProjectFizilion/blob/demon/LICENSE) - Version 1.d, February 2020
 
 Graphics Copyrighted By [ElytrA8](https://t.me/ElytrA8) © 2021

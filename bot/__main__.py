@@ -3,14 +3,14 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot start point """
+""" bot start point """
 
 from importlib import import_module
 from sys import argv
 from asyncio import sleep
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import LOGS, bot, HEROKU_APP_NAME, BOTLOG, BOTLOG_CHATID, ALIVE_NAME, USERBOT_VERSION, HEROKU_API_KEY, repo_lenk
-from userbot.modules import ALL_MODULES
+from bot import LOGS, bot, HEROKU_APP_NAME, BOTLOG, BOTLOG_CHATID, ALIVE_NAME, bot_VERSION, HEROKU_API_KEY, repo_lenk
+from bot.modules import ALL_MODULES
 from telethon import __version__, version
 from platform import python_version, uname
 
@@ -25,7 +25,7 @@ except PhoneNumberInvalidError:
     exit(1)
 
 for module_name in ALL_MODULES:
-    imported_module = import_module("userbot.modules." + module_name)
+    imported_module = import_module("bot.modules." + module_name)
 
 LOGS.info(f"You are running Project Fizilion on {repo_lenk}")
 
@@ -37,7 +37,7 @@ output = (
     f"•`Telethon       : v{version.__version__} `\n"
     f"•`Python         : v{python_version()} `\n"
     f"•`User           : {DEFAULTUSER} `\n"
-    f"•`Fizilion       : {USERBOT_VERSION} `\n"
+    f"•`Fizilion       : {bot_VERSION} `\n"
 )
 
 async def start():
@@ -53,7 +53,7 @@ async def start():
 bot.loop.run_until_complete(start())
 
 LOGS.info(
-    "Congratulations, your userbot is now running !! Test it by typing .alive / .on in any chat."
+    "Congratulations, your bot is now running !! Test it by typing .alive / .on in any chat."
     "If you need assistance, head to https://t.me/ProjectFizilionChat")
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
     print("HEROKU detected, sleeping for 5 minutes to prevent String Session Error")

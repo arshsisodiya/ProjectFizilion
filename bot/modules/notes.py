@@ -3,19 +3,19 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module containing commands for keeping notes. """
+""" bot module containing commands for keeping notes. """
 
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern="^.notes$")
 async def notes_active(svd):
     """ For .notes command, list all of the notes saved in a chat. """
     try:
-        from userbot.modules.sql_helper.notes_sql import get_notes
+        from bot.modules.sql_helper.notes_sql import get_notes
     except AttributeError:
         await svd.edit("`Running on Non-SQL mode!`")
         return
@@ -34,7 +34,7 @@ async def notes_active(svd):
 async def remove_notes(clr):
     """ For .clear command, clear note with the given name."""
     try:
-        from userbot.modules.sql_helper.notes_sql import rm_note
+        from bot.modules.sql_helper.notes_sql import rm_note
     except AttributeError:
         await clr.edit("`Running on Non-SQL mode!`")
         return
@@ -49,7 +49,7 @@ async def remove_notes(clr):
 async def add_note(fltr):
     """ For .save command, saves notes in a chat. """
     try:
-        from userbot.modules.sql_helper.notes_sql import add_note
+        from bot.modules.sql_helper.notes_sql import add_note
     except AttributeError:
         await fltr.edit("`Running on Non-SQL mode!`")
         return
@@ -91,7 +91,7 @@ async def incom_note(getnt):
     try:
         if not (await getnt.get_sender()).bot:
             try:
-                from userbot.modules.sql_helper.notes_sql import get_note
+                from bot.modules.sql_helper.notes_sql import get_note
             except AttributeError:
                 return
             notename = getnt.text[1:]

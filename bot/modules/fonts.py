@@ -4,8 +4,8 @@
 # you may not use this file except in compliance with the License.
 # This module is maked by Project TESLA
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 normiefont = [
     "a",

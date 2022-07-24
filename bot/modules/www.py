@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module containing commands related to the \
+""" bot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
 from datetime import datetime
@@ -11,9 +11,9 @@ from datetime import datetime
 from speedtest import Speedtest
 from telethon import functions
 
-from userbot import CMD_HELP
-from userbot.events import register
-from userbot.utils import humanbytes
+from bot import CMD_HELP
+from bot.events import register
+from bot.utils import humanbytes
 
 @register(outgoing=True, pattern=r"^\.speedtest$")
 async def speedtest(event):
@@ -101,7 +101,7 @@ async def neardc(event):
 
 @register(outgoing=True, pattern="^.ping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .ping command, ping the bot from any chat.  """
     start = datetime.now()
     await pong.edit("`Pong!`")
     end = datetime.now()

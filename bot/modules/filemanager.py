@@ -10,9 +10,9 @@ import os.path
 import time
 from os.path import exists, isdir
 
-from userbot import CMD_HELP
-from userbot.events import register
-from userbot.utils import humanbytes
+from bot import CMD_HELP
+from bot.events import register
+from bot.utils import humanbytes
 
 MAX_MESSAGE_SIZE_LIMIT = 4095
 

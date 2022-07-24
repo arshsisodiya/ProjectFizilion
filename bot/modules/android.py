@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module containing commands related to android"""
+""" bot module containing commands related to android"""
 
 import asyncio
 import json
@@ -15,9 +15,9 @@ import time
 from bs4 import BeautifulSoup
 from requests import get
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.utils import chrome, human_to_bytes, humanbytes, md5, time_formatter
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
+from bot.utils import chrome, human_to_bytes, humanbytes, md5, time_formatter
 
 GITHUB = "https://github.com"
 
@@ -348,7 +348,7 @@ CMD_HELP.update(
 \n\n.codename <brand> <device>\
 \nUsage: Search for android device codename.\
 \n\n.pixeldl **<download.pixelexperience.org>**\
-\nUsage: Download pixel experience ROM into your userbot server.\
+\nUsage: Download pixel experience ROM into your bot server.\
 \n\n.specs <brand> <device>\
 \nUsage: Get device specifications info.\
 \n\n.twrp <codename>\

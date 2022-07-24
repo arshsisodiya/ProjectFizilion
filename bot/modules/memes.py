@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for having some fun with people. """
+""" bot module for having some fun with people. """
 
 import time
 from asyncio import sleep
@@ -15,9 +15,9 @@ import requests
 import random
 from cowpy import cow
 
-from userbot import CMD_HELP, LOGS
-from userbot.events import register
-from userbot.modules.admin import get_user_from_event
+from bot import CMD_HELP, LOGS
+from bot.events import register
+from bot.modules.admin import get_user_from_event
 
 # ================= CONSTANT =================
 METOOSTR = [
@@ -409,7 +409,7 @@ FACEREACTS = [
 RUNS_STR = [
     "Runs to Thanos..",
     "Runs far, far away from earth..",
-    "Running faster than Bolt coz i'mma userbot !!",
+    "Running faster than Bolt coz i'mma bot !!",
     "Runs to Marie..",
     "This Group is too cancerous to deal with.",
     "Cya bois",
@@ -689,7 +689,7 @@ GM_STR = [
 
 @register(outgoing=True, pattern=r"^.(\w+)say (.*)")
 async def univsaye(cowmsg):
-    """ For .cowsay module, userbot wrapper for cow which says things. """
+    """ For .cowsay module, bot wrapper for cow which says things. """
     arg = cowmsg.pattern_match.group(1).lower()
     text = cowmsg.pattern_match.group(2)
 
@@ -1008,7 +1008,7 @@ async def face(owo):
 
 @register(outgoing=True, pattern="^.react$")
 async def react_meme(react):
-    """ Make your userbot react to everything. """
+    """ Make your bot react to everything. """
     await react.edit(choice(FACEREACTS))
 
 
@@ -1789,7 +1789,7 @@ CMD_HELP.update(
 \n\n.owo\
 \nUsage: UwU\
 \n\n.react\
-\nUsage: Make your userbot react to everything.\
+\nUsage: Make your bot react to everything.\
 \n\n.slap\
 \nUsage: reply to slap them with random objects !!\
 \n\n.cry\

@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot initialization. """
+""" bot initialization. """
 
 import os
 import platform
@@ -72,7 +72,7 @@ API_HASH = os.environ.get("API_HASH") or None
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 DEVS = 850714127, 1391975600, 1258887267, 1549401069
 
-# Userbot Session String
+# bot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION") or None
 
 # Deezloader
@@ -81,7 +81,7 @@ DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
 
-# Userbot logging feature switch.
+# bot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG") or "False")
 if BOTLOG:
     LOGSPAMMER = sb(os.environ.get("LOGSPAMMER") or "False")
@@ -157,7 +157,7 @@ COUNTRY = str(os.environ.get("COUNTRY") or "")
 TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 
 # Version of Project Fizilion
-USERBOT_VERSION = "4.0"
+bot_VERSION = "4.0"
 
 # User Terminal alias
 USER_TERM_ALIAS = os.environ.get("USER_TERM_ALIAS") or "dem0n"
@@ -233,7 +233,7 @@ if STRING_SESSION:
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
     # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    bot = TelegramClient("bot", API_KEY, API_HASH)
 
 
 async def check_botlog_chatid():

@@ -1,10 +1,10 @@
-#File summary module for Project Helios Ported from catuserbot by @arshsisodiya
+#File summary module for Project Helios Ported from catbot by @arshsisodiya
 import time
 from prettytable import PrettyTable
-from userbot import CMD_HELP, LOGS
-from userbot.events import register
-from userbot.utils import humanbytes, time_formatter, media_type, edit_delete, edit_or_reply
-from userbot.utils import _format
+from bot import CMD_HELP, LOGS
+from bot.events import register
+from bot.utils import humanbytes, time_formatter, media_type, edit_delete, edit_or_reply
+from bot.utils import _format
 
 
 TYPES = [

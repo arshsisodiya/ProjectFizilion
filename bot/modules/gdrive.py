@@ -6,7 +6,7 @@
 # Many improve from adekmaulana
 
 """
-    Google Drive manager for Userbot
+    Google Drive manager for bot
 """
 
 import asyncio
@@ -31,8 +31,8 @@ from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from telethon import events
 
-import userbot.modules.sql_helper.google_drive_sql as helper
-from userbot import (
+import bot.modules.sql_helper.google_drive_sql as helper
+from bot import (
     BOTLOG_CHATID,
     CMD_HELP,
     G_DRIVE_CLIENT_ID,
@@ -43,10 +43,10 @@ from userbot import (
     TEMP_DOWNLOAD_DIRECTORY,
     GDRIVE_INDEX_URL,
 )
-from userbot.events import register
-from userbot.modules.aria import aria2, check_metadata
-from userbot.utils import human_to_bytes, humanbytes, progress, time_formatter
-from userbot.utils.exceptions import CancelProcess
+from bot.events import register
+from bot.modules.aria import aria2, check_metadata
+from bot.utils import human_to_bytes, humanbytes, progress, time_formatter
+from bot.utils.exceptions import CancelProcess
 
 # =========================================================== #
 #                          STATIC                             #
@@ -614,7 +614,7 @@ async def upload(gdrive, service, file_path, file_name, mimeType):
         pass
     body = {
         "name": file_name,
-        "description": "Uploaded from Telegram using ProjectBish userbot.",
+        "description": "Uploaded from Telegram using ProjectBish bot.",
         "mimeType": mimeType,
     }
     try:

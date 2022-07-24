@@ -3,12 +3,12 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Port to UserBot by @MoveAngel
+# Port to bot by @MoveAngel
 
 import pyfiglet
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.figlet(?: |$)(.*)")

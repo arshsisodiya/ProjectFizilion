@@ -11,9 +11,9 @@ from telethon.errors.rpcerrorlist import MessageNotModifiedError
 import aria2p
 from requests import get
 
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.utils import humanbytes
+from bot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
+from bot.utils import humanbytes
 
 
 def subprocess_run(cmd):
@@ -242,7 +242,7 @@ async def check_progress_for_dl(gid, event, previous):
 CMD_HELP.update({
     "aria":
     ">`.aurl [URL]` (or) >`.amag [Magnet Link]` (or) >`.ator [path to torrent file]`"
-    "\nUsage: Downloads the file into your userbot server storage."
+    "\nUsage: Downloads the file into your bot server storage."
     "\n\n>`.apause (or) .aresume`"
     "\nUsage: Pauses/resumes on-going downloads."
     "\n\n>`.aclear`"
