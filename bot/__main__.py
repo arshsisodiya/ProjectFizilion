@@ -9,7 +9,7 @@ from importlib import import_module
 from sys import argv
 from asyncio import sleep
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from bot import LOGS, bot, HEROKU_APP_NAME, BOTLOG, BOTLOG_CHATID, ALIVE_NAME, bot_VERSION, HEROKU_API_KEY, repo_lenk
+from bot import LOGS, bot, BOTLOG, BOTLOG_CHATID, ALIVE_NAME, bot_VERSION, repo_lenk
 from bot.modules import ALL_MODULES
 from telethon import __version__, version
 from platform import python_version, uname
@@ -54,10 +54,8 @@ bot.loop.run_until_complete(start())
 
 LOGS.info(
     "Congratulations, your bot is now running !! Test it by typing .alive / .on in any chat."
-    "If you need assistance, head to https://t.me/ProjectFizilionChat")
-if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
-    print("HEROKU detected, sleeping for 5 minutes to prevent String Session Error")
-    LOGS.info("HEROKU detected, sleeping for 5 minutes to prevent String Session Error")
-    sleep(300)
-    bot.run_until_disconnected()
+    "If you need assistance, head to https://t.me/ProjectHelios")
+
+sleep(300)
+bot.run_until_disconnected()
 bot.run_until_disconnected()
