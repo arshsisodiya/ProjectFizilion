@@ -91,10 +91,6 @@ else:
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN") or "False")
 
-# Heroku Credentials for updater.
-HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ") or "False")
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME") or None
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY") or None
 
 # Github Credentials for updater and Gitupload.
 GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME") or None
@@ -118,8 +114,6 @@ DB_URI = os.environ.get("DATABASE_URL") or None
 # OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY") or None
 
-# remove.bg API key
-REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY") or None
 
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_DRIVER = "/usr/bin/chromedriver"
@@ -133,8 +127,6 @@ WEATHER_DEFLANG = os.environ.get("WEATHER_DEFLANG") or None
 # Genius lyrics API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN") or None
 
-# Wolfram Alpha API
-WOLFRAM_ID = os.environ.get("WOLFRAM_ID") or None
 
 # Anti Spambot Config
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT") or "False")
@@ -174,43 +166,6 @@ CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME") or "True")
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX") or None
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or None
-
-LASTFM_API = os.environ.get("LASTFM_API") or None
-LASTFM_SECRET = os.environ.get("LASTFM_SECRET") or None
-LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME") or None
-LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD") or None
-LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
-if LASTFM_API is not None:
-    lastfm = LastFMNetwork(
-        api_key=LASTFM_API,
-        api_secret=LASTFM_SECRET,
-        username=LASTFM_USERNAME,
-        password_hash=LASTFM_PASS,
-    )
-else:
-    lastfm = None
-
-# Google Drive Module
-G_DRIVE_DATA = os.environ.get("G_DRIVE_DATA") or None
-G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID") or None
-G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET") or None
-G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA") or None
-G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID") or None
-GDRIVE_INDEX_URL = os.environ.get("GDRIVE_INDEX_URL") or None
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
-    "TMP_DOWNLOAD_DIRECTORY") or "./downloads/"
-
-# Uptobox
-USR_TOKEN = os.environ.get("USR_TOKEN_UPTOBOX", None)
-
-#SourceForge
-SFUSER = os.environ.get("SFUSER") or "null"
-SFPASS = os.environ.get("SFPASS") or "null"
-SFDIR = os.environ.get("SFDIR") or "null"
-
-#Mega
-MEGA_EMAIL = os.environ.get("MEGA_EMAIL") or None
-MEGA_PASSWORD = os.environ.get("MEGA_PASSWORD") or None
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
